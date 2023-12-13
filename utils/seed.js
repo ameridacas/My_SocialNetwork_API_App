@@ -2,7 +2,7 @@ const connection = require('../config/connection');
 const { User, Thought } = require('../models');
 
 const getRandomUsers = (user) => {
-    const randomUser = getRandomUser(); 
+    const randomUser = getRandomUser();
     console.log(randomUser); // log the random user
     return '';
 };
