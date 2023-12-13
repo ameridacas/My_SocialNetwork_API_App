@@ -1,19 +1,8 @@
 const connection = require('../config/connection');
 const { User, Thought } = require('../models');
+const { getRandomUsers, getRandomThoughts } = require('./data');
 
-const getRandomUsers = (user) => {
-    const randomUser = getRandomUser();
-    console.log(randomUser); // log the random user
-    return '';
-};
-
-getRandomUsers();
-
-const getRandomThoughts = () => {
-    const randomThoughts = getRandomThoughts();
-    console.log(randomThoughts); // log the random thoughts
-    return [];
-};
+connection.on('error', (err) => err);
 
 connection.once('open', async () => {
     // Delete existing data
@@ -24,8 +13,7 @@ connection.once('open', async () => {
     const users = [];
     for (let i = 0; i < 20; i++) {
         users.push({
-            username: `user${i}`,
-            email: `user${i}@example.com`,
+            username: getRandomUsers(),
             thoughts: getRandomThoughts(),
             friends: [],
         });
@@ -43,7 +31,7 @@ connection.once('open', async () => {
         });
     }
 
-    // Insert thoughts
+    await User.updateMany(users);
     await Thought.insertMany(thoughts);
 
     console.table(users);
