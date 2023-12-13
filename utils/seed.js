@@ -1,13 +1,13 @@
 const connection = require('../config/connection');
 const { User, Thought } = require('../models');
 
-const getRandomUser = (user) => {
+const getRandomUsers = (user) => {
     const randomUser = getRandomUser(); 
     console.log(randomUser); // log the random user
     return '';
 };
 
-getRandomUser();
+getRandomUsers();
 
 const getRandomThoughts = () => {
     const randomThoughts = getRandomThoughts();
