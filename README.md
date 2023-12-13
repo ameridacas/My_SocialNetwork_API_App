@@ -6,6 +6,7 @@ NoSQL: Social Network API
 
 The purpose of this application was to understand how to use routes and controllers to work with the database. Based on the route the user can update, delete, add, update, get a single user, single thought, add/remove friends or reactions, etc.
 The information from the databse working with mongoose will portray the changes to the data from the routes and functions from the controllers.
+I'm still working on this application currently.
 
 #Mock_UP
 
